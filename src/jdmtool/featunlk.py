@@ -196,8 +196,11 @@ def update_feat_unlk(
 
     content2 = BytesIO()
     
-    content2.write((0).to_bytes(4, 'little'))
-
+    print(f"system_id: 0x{system_id:0x}")
+    if system_id == 0:     
+        content2.write((1).to_bytes(4, 'little'))
+    else:    
+        content2.write((0).to_bytes(4, 'little'))
 
     content2.write(truncate_system_id(system_id).to_bytes(4, 'little'))
 
