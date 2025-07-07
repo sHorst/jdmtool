@@ -297,7 +297,7 @@ OTHER DB:
 
     security_id = (int.from_bytes(content1.read(2), 'little') + SEC_ID_OFFSET) & 0xFFFF
     device_model_val = device_model(security_id)
-    print(f"* garmin_sec_id: {security_id}, device_model: {device_model_val}")
+    print(f"* garmin_sec_id: {security_id}, device_model: ({device_model_val})")
 
     magic = int.from_bytes(content1.read(4), 'little')
     if magic != MAGIC2:
